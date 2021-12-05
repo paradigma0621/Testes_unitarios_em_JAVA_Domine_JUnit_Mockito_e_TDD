@@ -1,0 +1,5 @@
+Existem alguma operações que o Mockito não consegue trabalhar. Por exemplo:
+	- Mockar um construtor de um objeto
+	- Alterar o comportammento de algum métodos static ou privados
+	
+	Caso precise realizar alguma dessas atividades precisamos do PowerMock.

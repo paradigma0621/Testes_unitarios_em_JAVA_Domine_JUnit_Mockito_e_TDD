@@ -1,0 +1,27 @@
+powermock não é mockito
+powermock é mais poderoso, mas também mais perigoso
+
+
+tanto no intelliJ como eclipse: quando dá erro num assert, um duplo click na assetiva (no sub-item) ele tarja a linha que deu erro no código.
+
+no eclipse: se deixar o cursor do teclado em cima do nome do test e pedir para rodar: ele só roda aquele test (o único método).
+
+----------------------------------------------------------------------
+
+Ao fazer um test: sempre fazer o cenário contrário (outro Test) para saber se realamente está pegando o problema. Foi dado um exemplo disso na Seção 2, Aula 9(tratamento de exceção 1).
+
+----------------------------------------------------------------------
+o Mock funciona com Interfaces ainda não implementadas
+	
+		Mockito.when(calcMock.somar(1, 2)).thenReturn(5);
+		Mockito.when(calcSpy.somar(1, 2)).thenReturn(5);
+
+		System.out.println("Mock:" + calcMock.somar(1, 2)); //saída: Mock:5
+		System.out.println("Spy:" + calcSpy.somar(1, 2)); //saída: Spy:5
+		
+		
+		System.out.println("Mock:" + calcMock.somar(2, 6)); //saída: Mock:0
+		System.out.println("Spy:" + calcSpy.somar(2, 6)); //saída: Spy:8   .... quando não há expectativa programada
+								//ele executa o método. Por conta disso o Spy não funciona
+								//com Interfaces, mas apenas com classes concretas
+----------------------------------------------------------------------

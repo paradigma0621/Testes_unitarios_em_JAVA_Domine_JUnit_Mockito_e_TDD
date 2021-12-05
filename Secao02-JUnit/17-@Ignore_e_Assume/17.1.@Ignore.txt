@@ -1,0 +1,11 @@
+/*
+Descomentar o "@Test" de um Test que não está legal ainda pode trazer esquecimento depois ou coisas afins... para deixar um @Test em stand by (não rodando). 
+
+*/
+
+	@Test     //Tem que ter essa linha, caso contrário não mostra o test como skipped no relatóriozinho visual
+	@Ignore
+	public void test() {
+		Assert.assertEquals(1, 1);
+	}
+

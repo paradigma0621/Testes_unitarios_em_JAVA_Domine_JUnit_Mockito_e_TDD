@@ -1,0 +1,14 @@
+Dividir o conteúdo de cada @Test em:
+//cenário
+(código...)
+
+//ação
+(código...)
+
+//verificação
+(código...)
+
+
+
+----------------------------------------------
+O teste de TDD consiste em 3 etapas: Teste, Código e a Fatoração

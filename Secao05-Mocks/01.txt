@@ -1,0 +1,3 @@
+quando precisarmos virtualizar algum serviço criamos Mocks.
+---------------------------
+videos importantes: 27,28,29,30

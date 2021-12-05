@@ -1,0 +1,45 @@
+O teste é executado com sucesso sempre que ele chega até o final e não tem nenhum erro e nenhuma falha.
+
+nos teste para a verificação dos testes assim que detecta a primeira assertiva. 
+Ex:
+
+@Test
+public void test1() {
+	assertTrue(true)
+	assertTrue(false)    //<--- gera test de método ruim e não verifica nada daqui pra baixo
+	assertTrue(true)
+	assertTrue(true)
+	
+}
+
+@Test
+public void test2() {  // avalia todos aqui
+	assertTrue(true) 
+	assertTrue(true)
+	assertTrue(true)
+	assertTrue(true)
+	
+}
+------------------------------------- Porém, com a notação:
+
+	@Rule
+	public ErrorCollector error = new ErrorCollector();
+	
+	//dentro do corpo da classe, e com os devidos import's, podemos usar: 
+	
+	@Test
+	public void test() {
+
+		//verificacao
+		error.checkThat(1, is(equalTo(5.0)));
+		error.checkThat(1, is(equalTo(5.0)));
+		error.checkThat(2, is(equalTo(2)));
+		error.checkThat(2, is(equalTo(1.0)));
+		error.checkThat(2, is(equalTo(2)));
+		error.checkThat(2, is(equalTo(2)));
+
+	}
+
+	e o IntelliJ não parará quando encontrar a primeira assertiva incorreta dentro do código. Ele avalia todas as linhas acima e no log do run do test, ao clicar no método-test ele mostra em um frame as linhas que geraram erro (no Eclipse mostra números, no IntelliJ é um "BufferString").
+
+	

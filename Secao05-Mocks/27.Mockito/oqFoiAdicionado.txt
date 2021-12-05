@@ -1,0 +1,9 @@
+Basicamente foi adicionado na classe de Test:
+	@Before
+	public void setup(){
+		service = new LocacaoService();
+		LocacaoDAO dao = Mockito.mock(LocacaoDAO.class);
+		service.setLocacaoDAO(dao);
+	}
+	
+	os tipos de retorno das classes Mockadas são conforme o tipo da instância, retornando: null, 0, false, ""

@@ -1,0 +1,11 @@
+
+assertThat(actual, expected) <- a ordem dos parâmetros inverteu
+
+
+assertThat(valorX, CoreMatchers.is(5));
+assertThat(valorX, is(equalTo(5)));
+assertThat(valorX, is(not(5)));
+assertThat(boolX, is(true)));
+
+ver todas disponbilizações dos métodos do hamcrest (que podem ser usados no assertThat()) em:
+http://hamcrest.org/JavaHamcrest/javadoc/1.3/index.html?help-doc.html

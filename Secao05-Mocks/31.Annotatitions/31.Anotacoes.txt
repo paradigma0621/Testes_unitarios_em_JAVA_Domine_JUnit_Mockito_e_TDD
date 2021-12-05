@@ -1,0 +1,54 @@
+
+public class LocacaoServiceTest {
+
+	@InjectMocks    //diz que vai injetar os @Mock ali de baixo nessa classe de teste (LocacaoService)
+	private LocacaoService service;  //AP: quero testar os @Test das classes dessa classe
+	
+	@Mock                           ///AP: essas são as classes que queremos "transformar em fantasmas", que vamos
+					// programar como os métodos delas vão responder com o when
+	private SPCService spc;
+	@Mock
+	private LocacaoDAO dao;
+	@Mock
+	private EmailService email;
+	
+	----
+	e é preciso colocar também:
+	
+		
+	@Before
+	public void setup(){
+		MockitoAnnotations.initMocks(this); ///Define que os atributos com annotations descrito ali em cima nesse
+						//arquivo vão ser inicializados automaticamente pelo Mockito
+		
+		/*    TIRA ESSES CARAS DE ANTES:
+		service = new LocacaoService();
+		dao = Mockito.mock(LocacaoDAO.class);
+		service.setLocacaoDAO(dao);
+		spc = Mockito.mock(SPCService.class);
+		service.setSPCService(spc);
+		email = Mockito.mock(EmailService.class);
+		service.setEmailService(email);
+		
+		*/
+	}
+	
+	
+	---------------------------- 
+	Tira também de LocacaoService.java as instâncias que tinhamos criado para injetar mock :
+		
+		/*
+		
+	public void setLocacaoDAO(LocacaoDAO dao) {
+		this.dao = dao;
+	}
+	
+	public void setSPCService(SPCService spc) {
+		spcService = spc;
+	}
+	
+	public void setEmailService(EmailService email) {
+		emailService = email;
+	}
+		
+		*/

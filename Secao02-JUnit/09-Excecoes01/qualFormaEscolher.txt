@@ -1,0 +1,9 @@
+A forma:
+01_tratamentoExcecoes_formaElegante : pode ser usada quando apenas a exceção é importante para nós, e quando conseguimos garantir o motivo pelo qual a exceção foi lançada
+
+Se precisar da mensagem da exceção, precisaremos ou da:
+02_tratamentoExcecoes_formaRobusta  ou   da 03_tratamentoExcecoes_OutraForma
+
+
+------
+Se precisarmos rodar código após a verificação da exception, a única que continua rodando é a forma robusta.

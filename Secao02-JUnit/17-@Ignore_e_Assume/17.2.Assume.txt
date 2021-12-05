@@ -1,0 +1,30 @@
+/*
+O Assume possibilita só rodar o @Test caso uma condição seja aceita - se não deixa o código em Stand By
+
+Em cada um dos testes abaixo tem:
+
+Assume.assumeFalse(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY)); //só roda esse Test se o dia atual não for sábado 
+Assume.assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));	//só roda esse Test se o dia atual for sábado 
+
+
+*/
+
+
+
+	@Test
+	public void deveAlugarFilme() throws Exception {
+		Assume.assumeFalse(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));  ///*****************<----
+		
+		//(código)
+		
+	}
+	
+	
+	
+	@Test
+	public void deveDevolverNaSegundaAoAlugarNoSabado() throws FilmeSemEstoqueException, LocadoraException{
+		Assume.assumeTrue(DataUtils.verificarDiaSemana(new Date(), Calendar.SATURDAY));///*****************<----
+
+		//(código)
+		
+	}

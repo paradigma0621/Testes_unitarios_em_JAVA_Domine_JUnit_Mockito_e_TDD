@@ -1,0 +1,4 @@
+O principal arquivo aqui é o:
+TestesUnitarios/src/test/java/br/ce/wcaquino/servicos/CalculoValorLocacaoTest.java
+
+porém talvez seja interessante rever o video da aula 18 pois não sei se é preciso colocar alguma configuração nos outros arquivos. Anotar aqui se precisar.

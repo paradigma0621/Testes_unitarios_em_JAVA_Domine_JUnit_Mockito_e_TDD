@@ -1,0 +1,10 @@
+@Before
+@After
+são executados antes e depois de cada teste da classe.
+O JUnit, para garantir que todos os métodos sejam independentes reinicializa todos as instâncias de variáveis da classea a cada novo @Test - é uma forma de garantir que todos tests estejam saindo do mesmo ponto de partida. Para garantir que uma instância declarada no corpo da classe não seja reinicializada basta deixá-la static.
+	Caso se deseje passar informações de um método de @Test para outro método @Test utiliza-se uma instância static da classe.
+
+@BeforeClass
+@AfterClass
+são executados antes da classe ser criada, e depois da classe ser destruída (ou seja: são executados apenas 1 vez). Pela sua natureza ambos devem ter por método sendo static
+
